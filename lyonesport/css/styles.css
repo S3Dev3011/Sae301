@@ -1,6 +1,6 @@
  /* Styles personnalisés */
  body {
-    font-family: Arial, sans-serif;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: #000;
     color: #fff;
   }
@@ -8,20 +8,27 @@
   .navbar {
     background-color: #1d1d1d;
   }
+/*LOGO*/
+  .navbar-brand img {
+    vertical-align: middle;
+    margin-right: 10px; 
+    width: 100%;
+    height: auto;
+  }
 
   .hero {
-    background: url('../images/pas-moins-de-16-000-spectateurs-sont-attendus-pour-l-edition-2020-de-la-lyon-e-sport-photo-archive-association-lyon-e-sport-1582570827.jpg') no-repeat center center/cover;
+    background: url('../images/tournois.png') no-repeat center center/cover;
     height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    text-align: justify;
   }
 
   .hero h1 {
     font-size: 3rem;
     font-weight: bold;
-    color: #f1c40f;
+    color: #ffffff;
   }
 
   .hero p {
@@ -66,29 +73,78 @@
 
   /*TITRE AVEC SOULIGNE ROUGE*/
   .section-title {
-    text-align: center;
-    position: relative;
-    font-size: 2rem; /* Taille du titre */
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-
-  .section-title::after {
-    content: '';
-    display: block;
-    width: 100px; /* Longueur du trait rouge */
-    height: 3px; /* Épaisseur du trait rouge */
-    background-color: #ff0000; /* Couleur rouge */
-    margin: 10px auto 0; /* Espace autour du trait */
-  }
-
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .section-title {
-      font-size: 1.5rem; /* Réduction de la taille du texte sur petits écrans */
+      text-align: center;
+      position: relative;
+      font-size: 2rem; /* Taille du titre */
+      font-weight: bold;
+      margin-bottom: 20px;
     }
 
     .section-title::after {
-      width: 200px; /* Réduction de la longueur du trait */
+      content: '';
+      display: block;
+      width: 300px; /* Longueur du trait rouge */
+      height: 3px; /* Épaisseur du trait rouge */
+      background-color: #ff0000; /* Couleur rouge */
+      margin: 10px auto 0; /* Espace autour du trait */
     }
-  }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .section-title {
+        font-size: 1.5rem; /* Réduction de la taille du texte sur petits écrans */
+      }
+
+      .section-title::after {
+        width: 80px; /* Réduction de la longueur du trait */
+      }
+    }
+
+    /*ICONE RS FOOTER*/
+    .social-icon {
+      width: 30px; /* Taille de l'icône */
+      height: auto;
+      transition: transform 0.3s ease-in-out; /* Animation au survol */
+    }
+    
+    .social-icon:hover {
+      transform: scale(1.2); /* Effet zoom au survol */
+    }
+
+
+    /*BOUTON POUR REMONTER*/
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px; /* Distance du bas */
+  right: 20px; /* Distance de la droite */
+  width: 50px;
+  height: 50px;
+  background-color: #ff0000; /* Rouge vif */
+  color: #fff; /* Flèche blanche */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 5px; /* Coins légèrement arrondis */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Ombre légère */
+  opacity: 0; /* Par défaut invisible */
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 999; /* Pour qu'il reste au-dessus */
+}
+
+.scroll-to-top:hover {
+  background-color: #cc0000; /* Rouge légèrement plus foncé */
+}
+
+.arrow-up {
+  transform: translateY(-2px); /* Légère correction de position */
+}
+
+/* Affiche le bouton lorsque la page est scrollée */
+.scroll-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
